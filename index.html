@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytiks | Tecnología y Smart Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E293B;
+            --accent: #DB2777; /* Inspirado en el fucsia del logo */
+            --whatsapp: #25D366;
+            --whatsapp-hover: #1EBE5D;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #334155;
+            --text-light: #64748B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* Header Moderno */
+        header {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem 2rem 1rem;
+            border-bottom: 4px solid var(--accent);
+        }
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.5px; }
+        header p { font-size: 1rem; color: #94A3B8; font-weight: 300; }
+
+        /* Contenedor Principal */
+        .container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem; }
+
+        /* Filtros Interactivos */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: white;
+            border: 1px solid #CBD5E1;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.15);
+        }
+
+        /* Grid de Productos */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tarjetas de Producto */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .card-body { padding: 1.5rem; }
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: #F1F5F9;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+        .card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 600; }
+        .card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.25rem; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
+
+        /* Botón WhatsApp */
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.2s ease;
+            border-top: 1px solid #E2E8F0;
+        }
+        .btn-wa:hover { background-color: var(--whatsapp-hover); }
+        .btn-wa svg { width: 20px; height: 20px; fill: white; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            background: #F1F5F9;
+            border-top: 1px solid #E2E8F0;
+            margin-top: 4rem;
+        }
+        footer p strong { color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <!-- Asegúrate de subir tu logo a GitHub con este mismo nombre: logo-analityks.jpg -->
+            <img src="logo-analityks.jpg" alt="Logo Analytiks">
+        </div>
+        <h1>Analytiks Tech</h1>
+        <p>Tú Negocio, Tus Números, Tú Control | Innovación para tu espacio con pago contra entrega.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Botones de Filtro Interactivo -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('teletrabajo')">Teletrabajo</button>
+            <button class="filter-btn" onclick="filterProducts('smarthome')">Smart Home</button>
+        </div>
+
+        <!-- Catálogo -->
+        <div class="grid" id="product-grid">
+            
+            <!-- Producto 1 -->
+            <div class="card" data-category="teletrabajo">
+                <div class="card-body">
+                    <span class="tag">Teletrabajo</span>
+                    <h3>Soporte Ergonómico</h3>
+                    <p>Foldable y en aluminio de alta resistencia. Mejora tu postura y cuida la vida útil de tu portátil.</p>
+                    <div class="price-row">
+                        <span class="price">$79.900 COP</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Soporte%20Ergonómico.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card" data-category="teletrabajo">
+                <div class="card-body">
+                    <span class="tag">Teletrabajo</span>
+                    <h3>Hub USB-C 6 en 1</h3>
+                    <p>Más puertos, salida HDMI y USB 3.0. Conecta todos tus periféricos sin limitaciones técnicas.</p>
+                    <div class="price-row">
+                        <span class="price">$89.900 COP</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Hub%20USB-C%206%20en%201.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card" data-category="smarthome">
+                <div class="card-body">
+                    <span class="tag">Smart Home</span>
+                    <h3>Cámara Smart 360°</h3>
+                    <p>Visión nocturna, resolución HD y control total desde la app móvil para cuidar tu espacio u oficina.</p>
+                    <div class="price-row">
+                        <span class="price">$119.900 COP</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20la%20Cámara%20Smart%20360°:%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="card" data-category="teletrabajo">
+                <div class="card-body">
+                    <span class="tag">Teletrabajo</span>
+                    <h3>Aro de Luz LED</h3>
+                    <p>Regulable, con trípode y soporte para celular. Ideal para videollamadas, clases o creación de contenido.</p>
+                    <div class="price-row">
+                        <span class="price">$65.000 COP</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Aro%20de%20Luz%20LED.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="card" data-category="smarthome">
+                <div class="card-body">
+                    <span class="tag">Smart Home</span>
+                    <h3>Enchufe Inteligente</h3>
+                    <p>Control por voz, automatización y conectividad Wi-Fi para modernizar cualquier electrodoméstico o lámpara.</p>
+                    <div class="price-row">
+                        <span class="price">$45.000 COP</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Enchufe%20Inteligente.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>Analytiks</strong>. Todos los derechos reservados. Envíos y pagos contra entrega directos en Bogotá.</p>
+    </footer>
+
+    <!-- Script para los filtros interactivos -->
+    <script>
+        function filterProducts(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
