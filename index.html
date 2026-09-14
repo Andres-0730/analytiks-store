@@ -1,274 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytiks | Tecnología y Smart Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1E293B;
-            --accent: #DB2777; /* Inspirado en el fucsia del logo */
-            --whatsapp: #25D366;
-            --whatsapp-hover: #1EBE5D;
-            --bg: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --text: #334155;
-            --text-light: #64748B;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-
-        /* Header Moderno */
-        header {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem 2rem 1rem;
-            border-bottom: 4px solid var(--accent);
-        }
-        .logo-container {
-            margin-bottom: 1.5rem;
-        }
-        .logo-container img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-        }
-        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.5px; }
-        header p { font-size: 1rem; color: #94A3B8; font-weight: 300; }
-
-        /* Contenedor Principal */
-        .container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem; }
-
-        /* Filtros Interactivos */
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: white;
-            border: 1px solid #CBD5E1;
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--text);
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.15);
-        }
-
-        /* Grid de Productos */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Tarjetas de Producto */
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #E2E8F0;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .card-body { padding: 1.5rem; }
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            background: #F1F5F9;
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-        }
-        .card h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 600; }
-        .card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.25rem; }
-        .price-row { display: flex; justify-content: space-between; align-items: center; }
-        .price { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
-
-        /* Botón WhatsApp */
-        .btn-wa {
-            background-color: var(--whatsapp);
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: background 0.2s ease;
-            border-top: 1px solid #E2E8F0;
-        }
-        .btn-wa:hover { background-color: var(--whatsapp-hover); }
-        .btn-wa svg { width: 20px; height: 20px; fill: white; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            background: #F1F5F9;
-            border-top: 1px solid #E2E8F0;
-            margin-top: 4rem;
-        }
-        footer p strong { color: var(--primary); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tecnología práctica para teletrabajo y hogares inteligentes. Compra fácil por WhatsApp con pago contra entrega en Bogotá." />
+  <meta name="theme-color" content="#101827" />
+  <title>Analytiks Tech | Tecnología que mejora tu día</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#101827; --ink-2:#243044; --muted:#69758a; --paper:#fffdfa; --soft:#f5f7fb; --line:#e4e8f0; --pink:#e93688; --pink-dark:#c71f6d; --lime:#b8f54c; --wa:#20c768; --radius:22px; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:"DM Sans",sans-serif; } a { color:inherit; text-decoration:none; } button { font:inherit; }
+    .announcement { background:var(--ink); color:#fff; padding:10px 20px; text-align:center; font-size:.86rem; } .announcement strong { color:var(--lime); }
+    .nav { max-width:1180px; margin:auto; min-height:78px; display:flex; align-items:center; justify-content:space-between; padding:12px 22px; } .brand { display:flex; align-items:center; gap:10px; font-family:Outfit,sans-serif; font-size:1.2rem; font-weight:800; } .brand-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:11px; background:var(--pink); color:white; font-size:1.12rem; } .nav-links { display:flex; gap:25px; align-items:center; color:var(--ink-2); font-size:.93rem; font-weight:600; } .nav-links a:hover { color:var(--pink); }
+    .hero { max-width:1180px; margin:8px auto 0; padding:34px 22px 48px; display:grid; grid-template-columns:1.04fr .96fr; gap:38px; align-items:center; } .eyebrow { display:inline-flex; align-items:center; gap:8px; background:#fff1f7; color:var(--pink-dark); border-radius:99px; padding:8px 12px; font-size:.81rem; font-weight:700; } .eyebrow i { width:7px; height:7px; background:var(--pink); border-radius:50%; } h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:Outfit,sans-serif; } h1 { margin:16px 0; max-width:650px; font-size:clamp(2.65rem,5.4vw,5rem); line-height:.98; letter-spacing:-.065em; } h1 em { color:var(--pink); font-style:normal; } .hero-copy > p { max-width:540px; color:var(--muted); font-size:1.08rem; line-height:1.65; } .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin:27px 0 25px; } .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:0; border-radius:13px; padding:14px 18px; cursor:pointer; font-weight:700; transition:transform .2s,box-shadow .2s,background .2s; } .button:hover { transform:translateY(-2px); } .button-primary { background:var(--pink); color:#fff; box-shadow:0 12px 22px rgba(233,54,136,.23); } .button-primary:hover { background:var(--pink-dark); } .button-ghost { border:1px solid var(--line); background:#fff; color:var(--ink); }.proof { display:flex; gap:18px; color:var(--muted); font-size:.83rem; font-weight:600; }.proof span { display:flex; gap:6px; align-items:center; }.proof b { color:var(--pink); }
+    .hero-art { position:relative; min-height:432px; border-radius:32px; overflow:hidden; background:linear-gradient(145deg,#ffcce2 0%,#ff9dc6 48%,#e93688 100%); box-shadow:0 25px 60px rgba(169,31,97,.24); } .hero-art:before { content:""; position:absolute; width:330px; height:330px; border:45px solid rgba(255,255,255,.25); border-radius:50%; right:-98px; top:-115px; }.hero-art:after { content:""; position:absolute; width:150px; height:150px; background:var(--lime); border-radius:50%; left:-50px; bottom:-55px; }.hero-art img { width:80%; height:82%; object-fit:cover; position:absolute; right:0; bottom:0; border-radius:180px 0 0 0; mix-blend-mode:multiply; opacity:.84; filter:saturate(.8) contrast(1.03); } .hero-card { z-index:1; position:absolute; left:24px; top:24px; width:196px; padding:16px; border-radius:18px; color:#fff; background:rgba(16,24,39,.9); box-shadow:0 14px 28px rgba(20,8,28,.2); }.hero-card small { color:#fbc9df; }.hero-card b { display:block; margin-top:5px; font-size:1.12rem; }.hero-sticker { z-index:2; position:absolute; right:19px; bottom:21px; padding:12px 16px; border-radius:50px; background:var(--lime); color:var(--ink); font-size:.82rem; font-weight:800; transform:rotate(-6deg); }
+    .trust { background:var(--ink); color:white; }.trust-wrap { max-width:1180px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); padding:23px 22px; gap:20px; }.trust-item { display:flex; align-items:center; gap:12px; }.trust-icon { display:grid; place-items:center; width:39px; height:39px; flex:none; background:rgba(255,255,255,.1); border-radius:50%; font-size:1.15rem; }.trust-item b { display:block; font-size:.92rem; }.trust-item small { color:#c6cfdd; font-size:.75rem; }
+    main { max-width:1180px; margin:auto; padding:76px 22px; }.section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:27px; }.kicker { color:var(--pink); text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; font-weight:800; }.section-head h2 { margin:6px 0 0; font-size:clamp(2rem,4vw,3rem); letter-spacing:-.05em; line-height:1.02; }.section-head p { max-width:400px; margin:0; color:var(--muted); line-height:1.55; }.filters { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:26px; }.filter { border:1px solid var(--line); border-radius:99px; background:white; color:var(--muted); padding:10px 15px; font-size:.88rem; font-weight:700; cursor:pointer; }.filter.active,.filter:hover { color:white; background:var(--ink); border-color:var(--ink); }.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }.product { background:white; overflow:hidden; border:1px solid var(--line); border-radius:var(--radius); display:flex; flex-direction:column; transition:transform .24s,box-shadow .24s; }.product:hover { transform:translateY(-7px); box-shadow:0 22px 40px rgba(30,41,59,.11); }.product.is-hidden { display:none; }.product-image { position:relative; height:222px; overflow:hidden; background:#eee; }.product-image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s; }.product:hover .product-image img { transform:scale(1.06); }.badge { position:absolute; top:13px; left:13px; border-radius:99px; padding:6px 10px; background:white; color:var(--ink); font-size:.7rem; font-weight:800; }.product-body { padding:18px 18px 16px; display:flex; flex-direction:column; flex:1; }.category { color:var(--pink); font-size:.73rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }.product h3 { margin:7px 0 8px; font-size:1.22rem; letter-spacing:-.025em; }.product p { flex:1; color:var(--muted); font-size:.9rem; line-height:1.5; }.product-bottom { display:flex; align-items:center; justify-content:space-between; gap:9px; border-top:1px solid var(--line); padding-top:15px; }.price { font-family:Outfit,sans-serif; color:var(--ink); font-size:1.12rem; font-weight:800; }.details { border:0; background:transparent; color:var(--pink-dark); padding:5px 0; cursor:pointer; font-size:.84rem; font-weight:800; }.details:hover { text-decoration:underline; }.buy { margin:0 16px 16px; background:var(--wa); color:white; }.buy:hover { background:#13aa57; }
+    .how { margin-top:82px; padding:38px; border-radius:28px; background:#fff2f8; }.how h2 { font-size:2rem; letter-spacing:-.045em; margin-bottom:28px; }.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }.step { display:flex; gap:13px; }.step-n { display:grid; place-items:center; flex:none; width:34px; height:34px; border-radius:50%; background:var(--pink); color:#fff; font-family:Outfit,sans-serif; font-weight:800; }.step h3 { margin:5px 0 5px; font-size:1rem; }.step p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.5; }
+    .faq-wrap { display:grid; grid-template-columns:.77fr 1.23fr; gap:68px; margin-top:82px; align-items:start; }.faq-wrap h2 { margin:7px 0 13px; font-size:2.5rem; line-height:1; letter-spacing:-.055em; }.faq-wrap > div > p { color:var(--muted); line-height:1.6; }.faq { border-top:1px solid var(--line); }.faq:last-child { border-bottom:1px solid var(--line); }.faq button { width:100%; display:flex; justify-content:space-between; border:0; background:none; padding:18px 0; text-align:left; cursor:pointer; font-weight:800; color:var(--ink); }.faq span { color:var(--pink); font-size:1.3rem; }.faq p { display:none; color:var(--muted); font-size:.91rem; line-height:1.55; padding:0 26px 19px 0; margin:0; }.faq.open p { display:block; }
+    footer { padding:0 22px 35px; }.footer-card { max-width:1180px; margin:auto; padding:31px; border-radius:26px; background:var(--ink); color:white; display:flex; align-items:center; justify-content:space-between; gap:22px; }.footer-card h2 { margin:0 0 5px; font-size:1.7rem; }.footer-card p { margin:0; color:#c5cfdd; }.footer-bottom { max-width:1180px; margin:23px auto 0; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.8rem; }.floating-wa { position:fixed; right:21px; bottom:21px; z-index:5; width:54px; height:54px; display:grid; place-items:center; border-radius:50%; background:var(--wa); color:white; font-size:1.5rem; box-shadow:0 11px 24px rgba(32,199,104,.35); }
+    dialog { width:min(520px,calc(100% - 28px)); border:0; border-radius:24px; padding:0; overflow:hidden; box-shadow:0 28px 70px rgba(0,0,0,.34); } dialog::backdrop { background:rgba(10,18,31,.55); backdrop-filter:blur(3px); }.modal-img { width:100%; height:210px; object-fit:cover; }.modal-content { padding:24px; }.modal-content h2 { margin:5px 0 8px; font-size:1.8rem; }.modal-content p { color:var(--muted); line-height:1.55; }.modal-actions { display:flex; gap:10px; margin-top:20px; }.modal-close { border:1px solid var(--line); background:white; color:var(--ink); }.modal-buy { background:var(--wa); color:#fff; }
+    @media (max-width:800px) { .nav-links { display:none; }.hero { grid-template-columns:1fr; padding-top:19px; }.hero-art { min-height:340px; }.hero-art img { width:78%; }.trust-wrap,.steps { grid-template-columns:1fr; }.trust-wrap { gap:15px; }.section-head,.faq-wrap { display:block; }.section-head p { margin-top:15px; }.grid { grid-template-columns:repeat(2,1fr); }.how { padding:27px 21px; }.faq-wrap { margin-top:64px; }.faq-list { margin-top:28px; }.footer-card { display:block; }.footer-card .button { margin-top:18px; }.footer-bottom { display:block; line-height:1.7; } }
+    @media (max-width:520px) { h1 { font-size:3.1rem; }.hero { padding-bottom:36px; }.hero-art { min-height:290px; }.hero-card { left:15px; top:15px; }.hero-art img { width:86%; }.grid { grid-template-columns:1fr; }.product-image { height:235px; }.proof { display:block; }.proof span { margin-top:7px; } main { padding-top:58px; } }
+  </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo-container">
-            <!-- Asegúrate de subir tu logo a GitHub con este mismo nombre: logo-analityks.jpg -->
-            <img src="logo-analityks.jpg" alt="Logo Analytiks">
-        </div>
-        <h1>Analytiks Tech</h1>
-        <p>Tú Negocio, Tus Números, Tú Control | Innovación para tu espacio con pago contra entrega.</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- Botones de Filtro Interactivo -->
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
-            <button class="filter-btn" onclick="filterProducts('teletrabajo')">Teletrabajo</button>
-            <button class="filter-btn" onclick="filterProducts('smarthome')">Smart Home</button>
-        </div>
-
-        <!-- Catálogo -->
-        <div class="grid" id="product-grid">
-            
-            <!-- Producto 1 -->
-            <div class="card" data-category="teletrabajo">
-                <div class="card-body">
-                    <span class="tag">Teletrabajo</span>
-                    <h3>Soporte Ergonómico</h3>
-                    <p>Foldable y en aluminio de alta resistencia. Mejora tu postura y cuida la vida útil de tu portátil.</p>
-                    <div class="price-row">
-                        <span class="price">$79.900 COP</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Soporte%20Ergonómico.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="card" data-category="teletrabajo">
-                <div class="card-body">
-                    <span class="tag">Teletrabajo</span>
-                    <h3>Hub USB-C 6 en 1</h3>
-                    <p>Más puertos, salida HDMI y USB 3.0. Conecta todos tus periféricos sin limitaciones técnicas.</p>
-                    <div class="price-row">
-                        <span class="price">$89.900 COP</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Hub%20USB-C%206%20en%201.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="card" data-category="smarthome">
-                <div class="card-body">
-                    <span class="tag">Smart Home</span>
-                    <h3>Cámara Smart 360°</h3>
-                    <p>Visión nocturna, resolución HD y control total desde la app móvil para cuidar tu espacio u oficina.</p>
-                    <div class="price-row">
-                        <span class="price">$119.900 COP</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20la%20Cámara%20Smart%20360°:%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="card" data-category="teletrabajo">
-                <div class="card-body">
-                    <span class="tag">Teletrabajo</span>
-                    <h3>Aro de Luz LED</h3>
-                    <p>Regulable, con trípode y soporte para celular. Ideal para videollamadas, clases o creación de contenido.</p>
-                    <div class="price-row">
-                        <span class="price">$65.000 COP</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Aro%20de%20Luz%20LED.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="card" data-category="smarthome">
-                <div class="card-body">
-                    <span class="tag">Smart Home</span>
-                    <h3>Enchufe Inteligente</h3>
-                    <p>Control por voz, automatización y conectividad Wi-Fi para modernizar cualquier electrodoméstico o lámpara.</p>
-                    <div class="price-row">
-                        <span class="price">$45.000 COP</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/573102437306?text=Hola,%20estoy%20interesado%20en%20el%20Enchufe%20Inteligente.%20¿Cómo%20es%20el%20proceso%20de%20pago%20contra%20entrega?" class="btn-wa" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 <strong>Analytiks</strong>. Todos los derechos reservados. Envíos y pagos contra entrega directos en Bogotá.</p>
-    </footer>
-
-    <!-- Script para los filtros interactivos -->
-    <script>
-        function filterProducts(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
+  <div class="announcement">Compra simple y segura · <strong>Pago contra entrega disponible en Bogotá</strong></div>
+  <nav class="nav" aria-label="Navegación principal"><a class="brand" href="#inicio"><span class="brand-mark">A</span> ANALYTIKS <span style="color:var(--pink)">TECH</span></a><div class="nav-links"><a href="#productos">Productos</a><a href="#como-comprar">Cómo comprar</a><a href="#preguntas">Preguntas</a></div><a class="button button-primary" href="#productos">Ver catálogo</a></nav>
+  <header class="hero" id="inicio"><div class="hero-copy"><div class="eyebrow"><i></i> Tecnología para tu día a día</div><h1>Pequeños cambios.<br><em>Gran comodidad.</em></h1><p>Soluciones prácticas para trabajar mejor, proteger tu espacio y disfrutar un hogar más inteligente.</p><div class="hero-actions"><a class="button button-primary" href="#productos">Explorar productos ↓</a><a class="button button-ghost" href="https://wa.me/573102437306?text=Hola%20Analytiks%20Tech%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">💬 Hablar por WhatsApp</a></div><div class="proof"><span><b>✓</b> Pago contra entrega</span><span><b>✓</b> Atención personalizada</span></div></div><div class="hero-art" aria-label="Tecnología para el hogar y teletrabajo"><div class="hero-card"><small>Lo que importa</small><b>Más simple.<br>Más conectado.</b></div><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1100&q=85" alt="Espacio de trabajo moderno con portátil" /><div class="hero-sticker">Envíos en Bogotá ✦</div></div></header>
+  <section class="trust"><div class="trust-wrap"><div class="trust-item"><div class="trust-icon">🚚</div><div><b>Entrega coordinada</b><small>Confirmamos cada pedido contigo</small></div></div><div class="trust-item"><div class="trust-icon">💳</div><div><b>Pagas al recibir</b><small>Disponible para entregas en Bogotá</small></div></div><div class="trust-item"><div class="trust-icon">💬</div><div><b>Soporte por WhatsApp</b><small>Resolvemos tus dudas antes de comprar</small></div></div></div></section>
+  <main><section id="productos"><div class="section-head"><div><div class="kicker">Catálogo seleccionado</div><h2>Tecnología que sí usas.</h2></div><p>Cinco esenciales para hacer más cómodo tu trabajo y más seguro tu hogar.</p></div><div class="filters" aria-label="Filtrar productos"><button class="filter active" data-filter="all">Todos <span>5</span></button><button class="filter" data-filter="teletrabajo">Teletrabajo</button><button class="filter" data-filter="smarthome">Smart Home</button></div><div class="grid" id="product-grid"></div></section>
+    <section class="how" id="como-comprar"><div class="kicker">Así de fácil</div><h2>Comprar no tiene que complicarse.</h2><div class="steps"><div class="step"><span class="step-n">1</span><div><h3>Elige tu producto</h3><p>Explora el catálogo y revisa sus características principales.</p></div></div><div class="step"><span class="step-n">2</span><div><h3>Escríbenos por WhatsApp</h3><p>Confirma disponibilidad, dirección y horario de entrega.</p></div></div><div class="step"><span class="step-n">3</span><div><h3>Recibe y paga</h3><p>Coordinamos tu envío en Bogotá y pagas al recibir.</p></div></div></div></section>
+    <section class="faq-wrap" id="preguntas"><div><div class="kicker">Sin letras pequeñas</div><h2>Preguntas frecuentes</h2><p>Queremos que compres con claridad. Si te falta alguna respuesta, escríbenos.</p></div><div class="faq-list"><div class="faq"><button>¿Cómo hago un pedido?<span>+</span></button><p>Usa el botón “Pedir por WhatsApp” del producto. Te confirmaremos disponibilidad y los datos de entrega antes de preparar el envío.</p></div><div class="faq"><button>¿Dónde realizan entregas?<span>+</span></button><p>Actualmente coordinamos entregas con pago contra entrega en Bogotá. Escríbenos para confirmar si tu zona tiene cobertura.</p></div><div class="faq"><button>¿Puedo hacer preguntas antes de comprar?<span>+</span></button><p>Claro. Nuestro canal de atención es WhatsApp; allí puedes consultar compatibilidad, disponibilidad y condiciones antes de pedir.</p></div></div></section></main>
+  <footer><div class="footer-card"><div><h2>¿Viste algo que te sirve?</h2><p>Escríbenos y coordinamos tu compra en minutos.</p></div><a class="button button-primary" href="https://wa.me/573102437306?text=Hola%20Analytiks%20Tech%2C%20quiero%20conocer%20el%20cat%C3%A1logo." target="_blank" rel="noopener">💬 Escribir por WhatsApp</a></div><div class="footer-bottom"><span>© 2026 Analytiks Tech. Todos los derechos reservados.</span><span>Tecnología práctica · Bogotá, Colombia</span></div></footer>
+  <a class="floating-wa" href="https://wa.me/573102437306?text=Hola%20Analytiks%20Tech%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Abrir conversación de WhatsApp">◔</a>
+  <dialog id="product-modal"><img class="modal-img" id="modal-image" alt="" /><div class="modal-content"><div class="category" id="modal-category"></div><h2 id="modal-title"></h2><p id="modal-copy"></p><strong class="price" id="modal-price"></strong><div class="modal-actions"><button class="button modal-close" id="modal-close">Cerrar</button><a class="button modal-buy" id="modal-buy" target="_blank" rel="noopener">Pedir por WhatsApp</a></div></div></dialog>
+  <script>
+    const phone = '573102437306';
+    const products = [
+      {id:'soporte',category:'teletrabajo',tag:'Teletrabajo',badge:'Más vendido',name:'Soporte Ergonómico',price:'$79.900 COP',copy:'Soporte plegable en aluminio para elevar tu portátil y mejorar tu postura.',detail:'Una forma simple de darle más comodidad a tu escritorio. Su diseño plegable ayuda a mantener el portátil a una altura más agradable para trabajar.',image:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85'},
+      {id:'hub',category:'teletrabajo',tag:'Teletrabajo',badge:'Setup listo',name:'Hub USB-C 6 en 1',price:'$89.900 COP',copy:'Conectividad extra para reunir tus periféricos en un solo lugar.',detail:'Pensado para ordenar tu espacio de trabajo y ampliar conexiones. Consulta por WhatsApp la compatibilidad con tu equipo antes de pedir.',image:'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=900&q=85'},
+      {id:'camara',category:'smarthome',tag:'Smart Home',badge:'Protege tu espacio',name:'Cámara Smart 360°',price:'$119.900 COP',copy:'Vista panorámica, visión nocturna y control desde tu celular.',detail:'Cuida los espacios que más te importan. Ideal para supervisar tu hogar u oficina desde la app móvil.',image:'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=900&q=85'},
+      {id:'aro',category:'teletrabajo',tag:'Teletrabajo',badge:'Para crear',name:'Aro de Luz LED',price:'$65.000 COP',copy:'Iluminación regulable con trípode y soporte para celular.',detail:'Mejora tus videollamadas, clases virtuales y contenido. Ajusta la luz para verte mejor en cualquier momento del día.',image:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=85'},
+      {id:'enchufe',category:'smarthome',tag:'Smart Home',badge:'Hazlo inteligente',name:'Enchufe Inteligente',price:'$45.000 COP',copy:'Controla y programa dispositivos desde Wi-Fi y con comandos de voz.',detail:'Una entrada fácil al hogar inteligente: automatiza lámparas o equipos compatibles desde tu teléfono.',image:'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85'}
+    ];
+    const grid = document.querySelector('#product-grid'); const modal = document.querySelector('#product-modal');
+    const message = p => `Hola Analytiks Tech, estoy interesado en ${p.name}. ¿Me confirmas disponibilidad y proceso de pago contra entrega?`;
+    function render(items=products) { grid.innerHTML = items.map(p => `<article class="product" data-category="${p.category}"><div class="product-image"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="badge">${p.badge}</span></div><div class="product-body"><span class="category">${p.tag}</span><h3>${p.name}</h3><p>${p.copy}</p><div class="product-bottom"><span class="price">${p.price}</span><button class="details" data-id="${p.id}">Ver detalles →</button></div></div><a class="button buy" target="_blank" rel="noopener" href="https://wa.me/${phone}?text=${encodeURIComponent(message(p))}">💬 Pedir por WhatsApp</a></article>`).join(''); }
+    render();
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); const category=button.dataset.filter; render(category==='all' ? products : products.filter(p=>p.category===category)); }));
+    grid.addEventListener('click', e => { const id=e.target.dataset.id; if(!id) return; const p=products.find(item=>item.id===id); document.querySelector('#modal-image').src=p.image; document.querySelector('#modal-image').alt=p.name; document.querySelector('#modal-category').textContent=p.tag; document.querySelector('#modal-title').textContent=p.name; document.querySelector('#modal-copy').textContent=p.detail; document.querySelector('#modal-price').textContent=p.price; document.querySelector('#modal-buy').href=`https://wa.me/${phone}?text=${encodeURIComponent(message(p))}`; modal.showModal(); });
+    document.querySelector('#modal-close').addEventListener('click',()=>modal.close()); modal.addEventListener('click',e=>{if(e.target===modal) modal.close();});
+    document.querySelectorAll('.faq').forEach(faq=>faq.querySelector('button').addEventListener('click',()=>{faq.classList.toggle('open'); faq.querySelector('span').textContent=faq.classList.contains('open')?'−':'+';}));
+  </script>
 </body>
 </html>
+
